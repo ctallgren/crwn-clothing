@@ -7,8 +7,9 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
+import { UserContext } from "../../context/user.context";
+
 import "./sign-up-form.styles.scss";
-import "../button/button.styles.scss";
 
 const defaultFormFields = {
   displayName: "",
@@ -21,7 +22,8 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
+  // console.log("hit");
+  // console.log(formFields);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
