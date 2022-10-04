@@ -1,11 +1,21 @@
-import ProductCard from "../product-card/product-card.component";
+import { FC } from 'react';
+
+import ProductCard from '../product-card/product-card.component';
+
 import {
   CategoryPreviewContainer,
   Title,
   Preview,
-} from "./category-preview.styles";
+} from './category-preview.styles';
 
-const CategoryPrieview = ({ title, products }) => {
+import { CategoryItem } from '../../store/categories/category.types';
+
+type CategoryPreviewProps = {
+  title: string;
+  products: CategoryItem[];
+};
+
+const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
       <h2>
@@ -22,4 +32,4 @@ const CategoryPrieview = ({ title, products }) => {
   );
 };
 
-export default CategoryPrieview;
+export default CategoryPreview;
